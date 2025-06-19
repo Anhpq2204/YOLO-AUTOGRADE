@@ -3,7 +3,7 @@ from PIL import Image
 import yolo_model
 import numpy as np
 import cv2
-
+import grade 
 # # st.markdown(
 # #     """
 # #     <style>
@@ -42,7 +42,9 @@ if image is not None:
     st.image(img_rgb, caption="Ảnh vừa được tải lên", use_column_width=True)
     image, final_string = yolo_model.solve(img_bgr)
     st.subheader("Thông tin phát hiện")
-    st.write(final_string)
+    # st.write(final_string)
+    diem=grade.grade_he(final_string)
+    st.write(diem)
 
 
 

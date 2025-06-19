@@ -5,7 +5,7 @@ import re
 from ultralytics import YOLO
 import numpy as np
 import cv2
-
+import grade
 
 
 def solve(image):
@@ -407,10 +407,13 @@ def solve(image):
                                islice(raw["Part2"].items(), 16)}
 
             # Step 1: Lấy dữ liệu Part3 ban đầu
-            part3_raw = {int(k): v if v.strip() else [] for k, v in islice(raw["Part3"].items(), 24)}
+            # print('ppppp',raw["Part3"])
+            # print('aaaaa')
+            part3_raw = {int(k): v if v.strip() else [] for k, v in islice(raw["Part3"].items(), 6)}
             
             # Gán vào result
             result["Part3"] = part3_raw
+            
 
             return result
         final_string = parse_result_to_json(final_string)
@@ -514,4 +517,7 @@ if __name__=='__main__':
     image, final_string = solve(image)
     print(final_string)
     cv2.imwrite("output.jpg", image)
-    print(type(final_string))
+    # print(type(final_string))
+    diem=grade.grade_he(final_string)
+    print(diem)
+
