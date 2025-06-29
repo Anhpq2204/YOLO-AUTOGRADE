@@ -9,7 +9,7 @@ import grade
 
 
 def solve(image):
-    model_path = "best (1).pt"
+    model_path = "best (2).pt"
     model = YOLO(model_path)
     ## data moi
     test_dir = "./image"
@@ -423,7 +423,7 @@ def solve(image):
         return SBD_ans, MDT_ans, PartI_ans, PartII_ans, PartIII_ans, final_string
 
 
-    model_path = "best (1).pt"
+    model_path = "best (2).pt"
     model = YOLO(model_path)
     #test_dir = "/kaggle/input/test-set2/testset1/testset1/images"
     results_folder = "results_test_after"
